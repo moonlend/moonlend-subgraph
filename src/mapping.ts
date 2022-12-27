@@ -115,7 +115,7 @@ export function handleLoanCreated(event: LoanCreated): void {
   loan.startTime = startTime;
   loan.createdBlock = block;
   loan.deadline = startTime.plus(pool!.maxLoanLength);
-  loan.tokenUri = `https://nft.moonlend.app/nft/1287/${pool!.address.toHexString().toLowerCase()}/${pool!.nftContract.toHexString().toLowerCase()}/${loanId.toString()}`;
+  loan.tokenUri = `https://nft.moonlend.app/nft/1285/${pool!.address.toHexString().toLowerCase()}/${pool!.nftContract.toHexString().toLowerCase()}/${loanId.toString()}`;
   loan.pool = pool!.id;
 
   loan.save();
