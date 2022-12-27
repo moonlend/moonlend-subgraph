@@ -1,6 +1,5 @@
 type Factory @entity {
   id: ID!
-  count: Int!
   address: Bytes!
   contracts: [Pool!]! @derivedFrom(field: "factory")
   createdTimestamp: BigInt!
