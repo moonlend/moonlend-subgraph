@@ -1,0 +1,47 @@
+type Factory @entity {
+  id: ID!
+  count: Int!
+  address: Bytes!
+  contracts: [Pool!]! @derivedFrom(field: "factory")
+  createdTimestamp: BigInt!
+  createdBlock: BigInt!
+}
+
+type Pool @entity {
+  id: ID!
+  address: Bytes!
+  nftContract: Bytes!
+  owner: Bytes!
+  name: String!
+  symbol: String!
+  factory: Factory!
+  maxLoanLength: BigInt!
+  ltv: BigInt!
+  minimumInterest: BigInt!
+  maxVariableInterestPerEthPerSecond: BigInt!
+  createdTimestamp: BigInt!
+  createdBlock: BigInt!
+}
+
+type Loan @entity {
+  id: ID!
+  loanId: BigInt!
+  pool: Pool!
+  originalOwner: Bytes
+  owner: Bytes
+  nftId: BigInt!
+  interest: BigInt!
+  borrowed: BigInt!
+  startTime: BigInt!
+  deadline: BigInt!
+  createdBlock: BigInt!
+  tokenUri: String!
+}
+
+type Liquidator @entity {
+  id: ID!
+  address: Bytes!
+  pool: Pool!
+  createdTimestamp: BigInt!
+  createdBlock: BigInt!
+}
