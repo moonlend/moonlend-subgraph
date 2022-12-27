@@ -6,7 +6,7 @@ dataSources:
     name: MoonLendFactory
     network: mbase
     source:
-      address: "0x664885D29933c48728E85F5728808DffC40cb577"
+      address: "0x5Aa8458aCFC83d9141dD851218213F51184E37Cb"
       abi: MoonLendFactory
     mapping:
       kind: ethereum/events
